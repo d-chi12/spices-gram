@@ -54,6 +54,10 @@ group :production do
   gem 'pg', '1.2.3'
 end
 
+# for image uploader with AWS S3
+gem 'carrierwave'
+gem 'fog'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
