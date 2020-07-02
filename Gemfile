@@ -54,6 +54,8 @@ group :production do
   gem 'pg', '1.2.3'
 end
 
+gem 'dotenv-rails'
+
 # for image uploader with AWS S3
 gem 'carrierwave'
 gem 'fog'
