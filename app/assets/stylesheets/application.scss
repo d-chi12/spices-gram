@@ -25,7 +25,15 @@
 }
 
 .main-image {
-	height: 940px;
-	background-image: url(meal.png);
-	background-size: contain;
+	height: 120%;
+	width: 100%;
+	background-image: url(home5.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.main-text {
+	font-size: 100px;
+	color: white;
+	padding-top: 440px;
 }
