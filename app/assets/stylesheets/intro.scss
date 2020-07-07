@@ -4,12 +4,38 @@
 
 
 
-.info {
+.main {
   background-image: url(home2.jpg);
   height: 1000px;
   background-size: cover;  
 }
 
-.info-text {
-  padding: 100px 0 0 700px;
+.info {
+  float: right;
+  width: 900px;
+  
+  &_text {
+    padding: 100px 0;
+  }
+}
+
+.indexList01 {
+  position: relative;
+  display: block;
+  background-image: url(pin.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain; 
+  width: 212px;
+  height: 287px;
+  line-height: 1.4;
+}
+
+.first {
+  background-image: url(garlic.jpg);
+  background-size: contain; 
+  background-repeat: no-repeat;
+  width: 212px;
+  height: 287px;
+  line-height: 1.4;
 }
