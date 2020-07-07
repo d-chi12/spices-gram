@@ -26,7 +26,7 @@
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: contain; 
-  width: 212px;
+  width: 300px;
   height: 287px;
   line-height: 1.4;
 }
@@ -38,4 +38,14 @@
   width: 212px;
   height: 287px;
   line-height: 1.4;
+}
+
+.indexList01 li span {
+    display: block;
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    width: 200px;
+    font-size: 15px;
+    font-size: 1.00rem;
 }
