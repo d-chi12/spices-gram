@@ -38,6 +38,9 @@
       <% if user_signed_in? %>
         <div id="navbarExampleTransparentExample" class="navbar-menu">
           <div class="navbar-item">
+            <%= link_to "スパイス紹介", intro_path, class: "navbar-item button is-warning is-light" %>
+          </div>
+          <div class="navbar-item">
             <%= link_to "レシピ", recipes_path, class: "navbar-item button is-warning is-light" %>
           </div>
           <div class="navbar-item">

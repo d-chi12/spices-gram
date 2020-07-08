@@ -57,7 +57,7 @@ end
 
 # for image uploader with AWS S3
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 
 # image resizing
 gem 'mini_magick'
