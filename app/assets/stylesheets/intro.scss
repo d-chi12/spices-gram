@@ -9,7 +9,7 @@
 
 .img {
   background-image: url(home2.jpg);
-  height: 1000px;
+  height: 2420vh;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -18,11 +18,35 @@
 .info {
   float: right;
   width: 900px;
+  padding-left: 100px;
   
-  &_text {
-    padding: 100px 0;
+  &__main {
+    padding: 150px 0;
+  }
+
+  &__title {
+    font-size: 100px;
+    font-family: cursive;
+    color : black;
+    padding-bottom: 50px;
+  }
+
+  &__text {
+    font-size: 20px;
   }
 }
+
+.info_sub {
+  &__title {
+  font-size: 29px;
+  padding-top: 100px;
+  }
+  &__text {
+    padding-top: 30px;
+  }
+}
+
+
 
 .indexList01 {
   position: relative;
@@ -55,9 +79,17 @@
     font-size: 1.00rem;
 }
 
+.p-content{
+  padding: 0 300px 0 0;
+}
+
+.spice_title {
+  color: black;
+}
+
 .p-content blockquote {
   margin-top: 2.19619vw;
-  border: 1px solid hsla(0,0%,100%,.5);
+  border: 1px solid gray;
   font-size: 1.02489vw;
   line-height: 2;
   padding: 1.75695vw 2.19619vw;
