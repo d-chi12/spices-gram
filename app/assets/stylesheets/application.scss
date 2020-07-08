@@ -16,6 +16,10 @@
 
  @import "bulma";
 
+ h2 {
+	 font-size: 30px;
+ }
+
 .notification:not(:last-child){
 	margin-bottom: 0;
 }

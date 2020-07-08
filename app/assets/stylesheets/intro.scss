@@ -3,11 +3,16 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-
 .main {
+  position: relative;
+}
+
+.img {
   background-image: url(home2.jpg);
   height: 1000px;
-  background-size: cover;  
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 .info {
@@ -48,4 +53,12 @@
     width: 200px;
     font-size: 15px;
     font-size: 1.00rem;
+}
+
+.p-content blockquote {
+  margin-top: 2.19619vw;
+  border: 1px solid hsla(0,0%,100%,.5);
+  font-size: 1.02489vw;
+  line-height: 2;
+  padding: 1.75695vw 2.19619vw;
 }
