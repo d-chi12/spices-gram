@@ -8,6 +8,7 @@ class Recipe < ApplicationRecord
     validates :title
     validates :body
     validates :spice
+    validates :quantity
     validates :image
   end
 end

@@ -24,14 +24,27 @@
                 <p class="title is-4"><%= @recipe.title %></p>
               </div>
             </div>
-            <table class="table is-narrow">
+            
+            <div class="recipe">
+              <table class="table is-narrow recipe__inner">
                 <tr>
-                  <th>spice,材料</th>
+                  <th>材料</th>
                 </tr>
                 <tr>
                   <td><%= simple_format @recipe.spice %></td>
                 </tr>
               </table>
+
+              <table class="table is-narrow recipe__inner space">
+                <tr>
+                  <th>分量</th>
+                </tr>
+                <tr>
+                  <td><%= simple_format @recipe.quantity %></td>
+                </tr>
+              </table>
+            </div>
+
             <div class="content">
               <table class="table is-narrow">
                 <tr>
