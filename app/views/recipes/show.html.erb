@@ -48,6 +48,11 @@
               <% end %>
               <%= @recipe.favorites.count %>
 
+              <%= form_for [@recipe, @comment] do |f| %>
+                <%= f.text_field :content %>
+                <br>
+                <%= f.submit 'コメントする' %>
+              <% end %>
             </div>
           </div>
         </div>

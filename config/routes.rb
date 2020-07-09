@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :recipes do
     resource :favorites, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
   get "/intro" => "intro#index"
 end
