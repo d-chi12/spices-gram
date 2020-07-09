@@ -36,6 +36,18 @@
               <% if @recipe.user.id == current_user.id %>
                 <%= link_to "編集画面へ", edit_recipe_path(@recipe), class: "button is-success" %>
               <% end %>
+
+              <% if current_user.already_favorited?(@recipe) %>
+                <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+              <% else %>
+                <%= link_to recipe_favorites_path(@recipe), method: :create do %>
+                  <i class="far fa-heart"></i>
+                  <% end %>
+              <% end %>
+              <%= @recipe.favorites.count %>
+
             </div>
           </div>
         </div>
