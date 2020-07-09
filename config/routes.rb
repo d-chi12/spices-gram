@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: "home#index"
+  devise_for :users
   resources :users
-  resources :recipes
-  # resource :intro
-  
+  resources :recipes do
+    resource :favorites, only: [:create, :destroy]
+  end
   get "/intro" => "intro#index"
-  # get 'intro/show'
-  
 end
