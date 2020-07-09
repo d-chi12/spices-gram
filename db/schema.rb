@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_005352) do
   create_table "recipes", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
+    t.text "spice"
     t.text "body"
     t.string "image_id"
     t.datetime "created_at", precision: 6, null: false
@@ -33,8 +34,6 @@ ActiveRecord::Schema.define(version: 2020_07_02_005352) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.text "profile"
     t.string "profile_image_id"
