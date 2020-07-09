@@ -24,6 +24,14 @@
                 <p class="title is-4"><%= @recipe.title %></p>
               </div>
             </div>
+            <table class="table is-narrow">
+                <tr>
+                  <th>spice,材料</th>
+                </tr>
+                <tr>
+                  <td><%= simple_format @recipe.spice %></td>
+                </tr>
+              </table>
             <div class="content">
               <table class="table is-narrow">
                 <tr>
