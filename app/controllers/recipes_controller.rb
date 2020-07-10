@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @comments = @recipe.comments
     @comment = Comment.new
-    @user = User.find(params[:id])
   end
 
   def new

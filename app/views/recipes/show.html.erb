@@ -12,18 +12,18 @@
             <table class="table is-fullwidth">
               <tr>
                 <td class="is-size-4">
-                  <strong><%= @user.username %></strong>
+                  <strong><%=link_to @recipe.user.username, user_path(@recipe.user) %></strong>
                 </td>
                 <td class="is-size-4">
-                  <%= @user.email %>
+                  <%=link_to @recipe.user.email, user_path(@recipe.user) %>
                 </td>
                 <td class="is-size-4">
-                  <i class="far fa-sticky-note"></i> : <%= @user.recipes.count %>
+                  <i class="fas fa-book"></i> : <%=link_to @recipe.user.recipes.count, user_path(@recipe.user) %>
                 </td>
                 
-                <% if @user.id == current_user.id %>
+                <% if @recipe.id == current_user.id %>
                 <td>
-                    <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
+                    <%= link_to "編集", @recipe.edit_recipe_path(@recipe), class: "button is-primary" %>
                 </td>
                 <% end %>
               </tr>
