@@ -12,18 +12,18 @@
             <table class="table is-fullwidth">
               <tr>
                 <td class="is-size-4">
-                  <strong><%=link_to @recipe.user.username, user_path(@recipe.user) %></strong>
+                  <strong><%= @user.username %></strong>
                 </td>
                 <td class="is-size-4">
-                  <%=link_to @recipe.user.email, user_path(@recipe.user) %>
+                  <%= @user.email %>
                 </td>
                 <td class="is-size-4">
-                  <i class="fas fa-book"></i> : <%=link_to @recipe.user.recipes.count, user_path(@recipe.user) %>
+                  <i class="fas fa-book"></i> : <%= @user.recipes.count %>
                 </td>
                 
-                <% if @recipe.id == current_user.id %>
+                <% if @user.id == current_user.id %>
                 <td>
-                    <%= link_to "編集", @recipe.edit_recipe_path(@recipe), class: "button is-primary" %>
+                    <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
                 </td>
                 <% end %>
               </tr>
@@ -52,6 +52,18 @@
               <%= attachment_image_tag @recipe, :image %>
             </figure>
           </div>
+          <div class="column is-7">
+            <% if current_user.already_favorited?(@recipe) %>
+              <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
+                <i class="fas fa-heart fa-2x"></i>
+              <% end %>
+            <% else %>
+              <%= link_to recipe_favorites_path(@recipe), method: :create do %>
+                <i class="far fa-heart fa-2x"></i>
+              <% end %>
+            <% end %>
+          </div>
+          <%= @recipe.favorites.count %>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
@@ -91,17 +103,6 @@
               <% if @recipe.user.id == current_user.id %>
                 <%= link_to "編集画面へ", edit_recipe_path(@recipe), class: "button is-success" %>
               <% end %>
-
-              <% if current_user.already_favorited?(@recipe) %>
-                <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
-                  <i class="fas fa-heart"></i>
-                <% end %>
-              <% else %>
-                <%= link_to recipe_favorites_path(@recipe), method: :create do %>
-                  <i class="far fa-heart"></i>
-                  <% end %>
-              <% end %>
-              <%= @recipe.favorites.count %>
 
               <%= form_for [@recipe, @comment] do |f| %>
                 <%= f.text_field :content %>
