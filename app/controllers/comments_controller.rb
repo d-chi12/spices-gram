@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment.user_id = current_user.id if user_signed_in?
+
     if @comment.save
-      redirect_back(fallback_location: root_path)
+      redirect_to dashboard_path, flash: { success: "コメントされました。"}
     else
-      redirect_back(fallback_location: root_path)
+      redirect_to dashboard_path, flash: { danger: "コメントに失敗しました。"}
     end
   end
 
