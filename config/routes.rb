@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   get "/intro" => "intro#index"
+  
 end

@@ -110,7 +110,7 @@
 
               <div class="comment-box">
                 <%= form_for [@recipe, @comment] do |f| %>
-                  <%= f.hidden_field :content %>
+                  <%= f.hidden_field :post_id, value: post.id %>
                   <%= f.text_field :content, placeholder: "コメントする" %>
                   <%= f.submit "投稿", class: "btn btn-succes float-right" %>
                 <% end %>

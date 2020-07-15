@@ -5,10 +5,10 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
-    @user = User.find(params[:id])
-    @comments = @recipe.comments
     @comment = Comment.new
+    @recipe = Recipe.find(params[:id])
+    @user = User.find_by(params[:id])
+    @comments = @recipe.comments
   end
 
   def new
