@@ -2,10 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
     @users = User.all
+    @posts = Post.all
+    @comment = Comment.new
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(params[:id])
   end
 
   def edit
