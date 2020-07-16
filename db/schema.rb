@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_11_075301) do
+ActiveRecord::Schema.define(version: 2020_07_15_080423) do
 
   create_table "comments", force: :cascade do |t|
-    t.string "content"
     t.integer "user_id", null: false
     t.integer "recipe_id", null: false
     t.datetime "created_at", precision: 6, null: false
