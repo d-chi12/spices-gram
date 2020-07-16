@@ -6,9 +6,9 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id if user_signed_in?
 
     if @comment.save
-      redirect_to resipe_path(@recipe), flash: { success: "コメントされました。"}
+      redirect_to resipes_path(@recipe), flash: { success: "コメントされました。"}
     else
-      redirect_to resipe_path(@recipe), flash: { danger: "コメントに失敗しました。"}
+      redirect_to resipes_path(@recipe), flash: { danger: "コメントに失敗しました。"}
     end
   end
 

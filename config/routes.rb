@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :posts, only: [:new,:create,:show]
   resources :comments, only: [:create, :destroy]
-  get "/resipe" => "users#show"
+  get "/resipes" => "resipes#show"
   get "/intro" => "intro#index"
   
   

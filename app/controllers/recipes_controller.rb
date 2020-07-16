@@ -6,10 +6,8 @@ class RecipesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @posts = Post.all
     @recipe = Recipe.find(params[:id])
-    @user = User.find_by(params[:id])
-    @comments = @recipe.comments
+    @users = User.where(active: true)
   end
 
   def new
