@@ -2,7 +2,6 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
-        <% @users.each do |user| %>
           <div class="columns is-centered">
             <div class="column is-4">
               <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
@@ -38,7 +37,7 @@
               </table>
             </div>
           </div>
-        <% end %>
+        
       </div>
     </div>
   </div>
@@ -114,7 +113,7 @@
                 <%= form_for @comment do |f| %>
                   <%= f.hidden_field :@post, value: @post %>
                   <%= f.text_field :comment, placeholder: "コメントする" %>
-                  <%= f.submit "投稿", class: "btn btn-succes float-right" %>
+                  <%= f.submit "投稿", class: "button is-warning btn_wrapper" %>
                 <% end %>
               </div>
             </div>
@@ -125,4 +124,3 @@
     </div>
   </div>
 </section>
-
