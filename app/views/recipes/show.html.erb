@@ -37,7 +37,7 @@
               </table>
             </div>
           </div>
-        
+        <% end %>
       </div>
     </div>
   </div>
@@ -111,9 +111,9 @@
 
               <div class="comment-box">
                 <%= form_for @comment do |f| %>
-                  <%= f.hidden_field :@recipe, value: @resipe %>
+                  <%= f.hidden_field :recipe_id, value: recipe.id %>
                   <%= f.text_field :comment, placeholder: "コメントする" %>
-                  <%= f.submit "投稿", class: "button is-warning btn_wrapper" %>
+                  <%= f.submit "投稿", class: "btn btn-succes float-right" %>
                 <% end %>
               </div>
             </div>
@@ -124,3 +124,4 @@
     </div>
   </div>
 </section>
+

@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @user = User.find_by(id: @recipe.user_id)
-    @comment = Comment.new
   end
 
   def new

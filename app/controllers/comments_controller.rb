@@ -6,14 +6,14 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id if user_signed_in?
 
     if @comment.save
-      redirect_to recipes_path, flash: { success: "コメントされました。"}
+      redirect_to recipes_path, flash: { success: "コメントされました。" }
     else
-      redirect_to recipes_path, flash: { danger: "コメントに失敗しました。"}
+      redirect_to recipes_path, flash: { danger: "コメントに失敗しました。" }
     end
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:comment, :post_id)
+    params.require(:comment).permit(:comment, :recipe_id)
   end
 end
