@@ -15,10 +15,12 @@ ActiveRecord::Schema.define(version: 2020_07_16_015649) do
   create_table "comments", force: :cascade do |t|
     t.integer "post_id"
     t.integer "user_id"
+    t.integer "recipe_id"
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["recipe_id"], name: "index_comments_on_recipe_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 

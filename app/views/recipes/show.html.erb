@@ -111,7 +111,7 @@
 
               <div class="comment-box">
                 <%= form_for @comment do |f| %>
-                  <%= f.hidden_field :@post, value: @post %>
+                  <%= f.hidden_field :@recipe, value: @resipe %>
                   <%= f.text_field :comment, placeholder: "コメントする" %>
                   <%= f.submit "投稿", class: "button is-warning btn_wrapper" %>
                 <% end %>
