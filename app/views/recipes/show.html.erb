@@ -105,12 +105,12 @@
 
               <div class="comment-box row">
                 <%= form_for @comment do |f| %>
-                  <%= f.hidden_field :@recipe_id, value: @recipe.id %>
+                  <%= f.hidden_field :recipe_id, value: @recipe.id %>
                   <div class="col-md-6">
                     <%= f.text_field :comment, placeholder: "コメントを投稿する" %>
                   </div>
                   <div class="col-md-6">
-                    <%= f.submit "投稿  ", class: "button is-warning btn_wrapper" %>
+                    <%= f.submit "投稿", class: "button is-warning btn_wrapper" %>
                   </div>
                 <% end %>
               </div>
