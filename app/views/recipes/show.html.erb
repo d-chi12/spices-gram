@@ -62,8 +62,8 @@
                 <i class="far fa-heart fa-2x"></i>
               <% end %>
             <% end %>
+            <%= @recipe.favorites.count %>
           </div>
-          <%= @recipe.favorites.count %>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
@@ -100,8 +100,10 @@
                   <td><%= simple_format @recipe.body %></td>
                 </tr>
               </table>
-
-              <%= render "recipes/comments" %>
+              <div id="prop-details">
+                <%= render "recipes/comments" %>
+              </div>
+              <button class="btn btn-outline-info mt-3" id="toggleDetails">詳細</button>
 
               <div class="comment-box row">
                 <%= form_for @comment do |f| %>

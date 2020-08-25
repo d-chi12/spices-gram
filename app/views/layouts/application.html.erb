@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="recipes.js"></script>
   </head>
 
   <body>
@@ -28,7 +29,7 @@
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-4" style="font-family: cursive;">spices-gram</h1>
         <% end %>
-        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <div class="navbar-burger burger" v-bind:class="{ 'is-active': menuActive }" v-on:click="menuToggle()" data-target="navbarExampleTransparentExample">
           <span></span>
           <span></span>
           <span></span>
@@ -36,7 +37,7 @@
       </div>
 
       <% if user_signed_in? %>
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div id="navbarExampleTransparentExample" class="navbar-menu"  v-bind:class="{ 'is-active': menuActive }" >
           <div class="navbar-item">
             <%= link_to "スパイス紹介", intro_path, class: "navbar-item button is-warning is-light" %>
           </div>
@@ -90,6 +91,5 @@
     </nav>
 
   <%= yield %>
-  
   </body>
 </html>

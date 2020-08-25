@@ -9,3 +9,12 @@
 }
 
 .space { margin-left: 15px; }
+
+#prop-details {
+  height: 100px;
+  overflow: hidden;
+
+  &.open {
+    height: auto;
+  }
+}
