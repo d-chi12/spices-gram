@@ -5,10 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="recipes.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="recipes.js"></script>
   </head>
 
   <body>
@@ -29,11 +29,77 @@
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-4" style="font-family: cursive;">spices-gram</h1>
         <% end %>
-        <div class="navbar-burger burger" v-bind:class="{ 'is-active': menuActive }" v-on:click="menuToggle()" data-target="navbarExampleTransparentExample">
+        <div class="navbar-burger burger" id="#toggleDetails">
           <span></span>
           <span></span>
           <span></span>
         </div>
+        <ul>
+          <% if user_signed_in? %>
+            <div id="navbarExampleTransparentExample" class="navbar-menu"  v-bind:class="{ 'is-active': menuActive }" >
+              <li>
+                <div class="navbar-item">
+                  <%= link_to "スパイス紹介", intro_path, class: "navbar-item button is-warning is-light" %>
+                </div>
+              </li>
+              <li>
+                <div class="navbar-item">
+                  <%= link_to "レシピ", recipes_path, class: "navbar-item button is-warning is-light" %>
+                </div>
+              </li>
+              <li>
+                <div class="navbar-item">
+                  <%= link_to "レシピ投稿", new_recipe_path, class: "navbar-item button is-warning is-light" %>
+                </div>
+              </li>
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="field is-grouped">
+                    <li>
+                      <p class="control">
+                        <%= link_to "レシピグラマー", users_path, class: "button is-warning is-light" %>
+                      </p>
+                    </li>
+                    <li>
+                      <p class="control">
+                        <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
+                      </p>
+                    </li>
+                    <li>
+                      <p class="control">
+                        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+                      </p>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+              <div class="navbar-item">
+                <%= link_to "スパイス紹介", intro_path, class: "navbar-item button is-warning is-light" %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "レシピ", recipes_path, class: "navbar-item button is-warning is-light" %>
+              </div>
+              <div class="navbar-item">
+                <%= link_to "レシピグラマー", users_path, class: "navbar-item button is-warning is-light" %>
+              </div>
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="field is-grouped">
+                    <p class="control">
+                      <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
+                    </p>
+                    <p class="control">
+                      <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <ul>
       </div>
 
       <% if user_signed_in? %>
