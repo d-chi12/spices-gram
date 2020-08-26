@@ -76,24 +76,34 @@
             </div>
           <% else %>
             <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <li>
               <div class="navbar-item">
                 <%= link_to "スパイス紹介", intro_path, class: "navbar-item button is-warning is-light" %>
               </div>
+            </li>
+            <li>
               <div class="navbar-item">
                 <%= link_to "レシピ", recipes_path, class: "navbar-item button is-warning is-light" %>
               </div>
+            </li>
+            <li>
               <div class="navbar-item">
                 <%= link_to "レシピグラマー", users_path, class: "navbar-item button is-warning is-light" %>
               </div>
+            </li>
               <div class="navbar-end">
                 <div class="navbar-item">
                   <div class="field is-grouped">
-                    <p class="control">
-                      <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
-                    </p>
-                    <p class="control">
-                      <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
-                    </p>
+                    <li>
+                      <p class="control">
+                        <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
+                      </p>
+                    </li>
+                    <li>
+                      <p class="control">
+                        <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
+                      </p>
+                    </li>
                   </div>
                 </div>
               </div>
