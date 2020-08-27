@@ -29,7 +29,7 @@
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-4" style="font-family: cursive;">spices-gram</h1>
         <% end %>
-        <div class="navbar-burger burger" id="#toggleDetails">
+        <div class="navbar-burger burger hamburger" id="#toggleDetails">
           <span></span>
           <span></span>
           <span></span>
@@ -112,8 +112,7 @@
         <ul>
       </div>
 
-      <% if user_signed_in? %>
-        <div id="navbarExampleTransparentExample" class="navbar-menu"  v-bind:class="{ 'is-active': menuActive }" >
+        <% if user_signed_in? %>
           <div class="navbar-item">
             <%= link_to "スパイス紹介", intro_path, class: "navbar-item button is-warning is-light" %>
           </div>
