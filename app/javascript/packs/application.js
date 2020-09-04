@@ -2,7 +2,10 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require_tree .
 
 
 require("@rails/ujs").start()
@@ -19,14 +22,15 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 // hamburger menu //
-$(function() {
-  $('.hamburger').click(function() {
-      $(this).toggleClass('active');
+// $(function() {
+//     console.log('aaaaaaaaaaaaa');
+//   $('.hamburger').click(function() {
+//       $(this).toggleClass('active');
 
-      if ($(this).hasClass('active')) {
-          $('.globalMenuSp').addClass('active');
-      } else {
-          $('.globalMenuSp').removeClass('active');
-      }
-  });
-});
+//       if ($(this).hasClass('active')) {
+//           $('.globalMenuSp').addClass('active');
+//       } else {
+//           $('.globalMenuSp').removeClass('active');
+//       }
+//   });
+// });

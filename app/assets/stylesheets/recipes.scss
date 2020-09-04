@@ -2,13 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
 .recipe {
   display: flex;
-  &__inner { width: 100% }
+  &__inner {
+    width: 100%;
+  }
 }
 
-.space { margin-left: 15px; }
+.space {
+  margin-left: 15px;
+}
 
 #prop-details {
   height: 100px;
@@ -17,4 +20,13 @@
   &.open {
     height: auto;
   }
+}
+.input-width {
+  width: 100%;
+}
+
+.input-left {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
 }

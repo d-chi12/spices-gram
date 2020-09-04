@@ -2,41 +2,41 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
-          <div class="columns is-centered">
-            <div class="column is-4">
-              <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
-                <%= attachment_image_tag @user, :profile_image, fallback: "no-image.jpg", class: "profile_image is-rounded" %>
-              </figure>
-            </div>
-            <div class="column is-8">
-              <table class="table is-fullwidth">
-                <tr>
-                  <td class="is-size-4">
-                    <strong><%= @user.username %></strong>
-                  </td>
-                  <td class="is-size-4">
-                    <%= @user.email %>
-                  </td>
-                  <td class="is-size-4">
-                    <i class="fas fa-book"></i> : <%= @user.recipes.count %>
-                  </td>
-                  
-                  <% if @user.id == current_user.id %>
-                  <td>
-                      <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
-                  </td>
-                  <% end %>
-                </tr>
-              </table>
-              <table class="table is-fullwidth">
-                <tr>
-                  <td>
-                    <%= @user.profile %>
-                  </td>
-                </tr>
-              </table>
-            </div>
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <figure class="image is-128x128" style="margin-left: auto; margin-right: auto;">
+              <%= attachment_image_tag @user, :profile_image, fallback: "no-image.jpg", class: "profile_image is-rounded" %>
+            </figure>
           </div>
+          <div class="column is-8">
+            <table class="table is-fullwidth">
+              <tr>
+                <td class="is-size-4">
+                  <strong><%= @user.username %></strong>
+                </td>
+                <td class="is-size-4">
+                  <%= @user.email %>
+                </td>
+                <td class="is-size-4">
+                  <i class="fas fa-book"></i> : <%= @user.recipes.count %>
+                </td>
+
+                <% if @user.id == current_user.id %>
+                <td>
+                  <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
+                </td>
+                <% end %>
+              </tr>
+            </table>
+            <table class="table is-fullwidth">
+              <tr>
+                <td>
+                  <%= @user.profile %>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -54,13 +54,13 @@
           </div>
           <div class="column is-7">
             <% if current_user.already_favorited?(@recipe) %>
-              <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
-                <i class="fas fa-heart fa-2x"></i>
-              <% end %>
+            <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
+            <i class="fas fa-heart fa-2x"></i>
+            <% end %>
             <% else %>
-              <%= link_to recipe_favorites_path(@recipe), method: :create do %>
-                <i class="far fa-heart fa-2x"></i>
-              <% end %>
+            <%= link_to recipe_favorites_path(@recipe), method: :create do %>
+            <i class="far fa-heart fa-2x"></i>
+            <% end %>
             <% end %>
             <%= @recipe.favorites.count %>
           </div>
@@ -70,7 +70,7 @@
                 <p class="title is-4"><%= @recipe.title %></p>
               </div>
             </div>
-            
+
             <div class="recipe">
               <table class="table is-narrow recipe__inner">
                 <tr>
@@ -103,17 +103,16 @@
               <div id="prop-details">
                 <%= render "recipes/comments" %>
               </div>
-              <button class="btn btn-outline-info mt-3" id="toggleDetails">詳細</button>
 
               <div class="comment-box row">
                 <%= form_for @comment do |f| %>
-                  <%= f.hidden_field :recipe_id, value: @recipe.id %>
-                  <div class="col-md-6">
-                    <%= f.text_field :comment, placeholder: "コメントを投稿する" %>
-                  </div>
-                  <div class="col-md-6">
-                    <%= f.submit "投稿", class: "button is-warning btn_wrapper" %>
-                  </div>
+                <%= f.hidden_field :recipe_id, value: @recipe.id %>
+                <div class="col-md-6">
+                  <%= f.text_field :comment, placeholder: "コメントを投稿する", class: 'input-width' %>
+                </div>
+                <div class="col-md-6 input-left">
+                  <%= f.submit "投稿", class: "button is-warning btn_wrapper" %>
+                </div>
                 <% end %>
               </div>
             </div>
@@ -124,4 +123,3 @@
     </div>
   </div>
 </section>
-
