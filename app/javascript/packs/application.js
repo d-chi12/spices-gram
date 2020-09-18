@@ -19,20 +19,6 @@ require("channels");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-// hamburger menu //
-// $(function() {
-//     console.log('aaaaaaaaaaaaa');
-//   $('.hamburger').click(function() {
-//       $(this).toggleClass('active');
-
-//       if ($(this).hasClass('active')) {
-//           $('.globalMenuSp').addClass('active');
-//       } else {
-//           $('.globalMenuSp').removeClass('active');
-//       }
-//   });
-// });
-
 /* ========================================================
 スクロールでトップに戻るボタンを表示
 =========================================================*/
