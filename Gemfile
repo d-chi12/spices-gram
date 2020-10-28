@@ -54,9 +54,9 @@ group :test do
   gem 'webdrivers'
 end
 
-#group :production do
-#  gem 'pg', '1.2.3'
-#end
+group :production do
+  gem 'pg'
+end
 
 # for image uploader with AWS S3
 gem 'carrierwave'
